@@ -12,6 +12,10 @@ submit_proposal()
 \description{
 Checks whether the current date is before the GSoC 2026
 submission deadline. The deadline is \Sexpr{format(gsocprop::SUBMISSION_DEADLINE, "\%B \%d, \%Y")}.
+\Sexpr{
+days_left <- as.numeric(gsocprop::SUBMISSION_DEADLINE - Sys.Date())
+if (days_left >= 0) paste("The deadline is in", days_left, "day(s).") else "The deadline has passed, try next year!"
+}
 }
 \details{
 Submit a GSoC Proposal
